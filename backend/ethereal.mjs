@@ -1,0 +1,10 @@
+﻿import nodemailer from 'nodemailer';
+const a = await nodemailer.createTestAccount();
+console.log('SMTP_HOST=' + a.smtp.host);
+console.log('SMTP_PORT=' + a.smtp.port);
+console.log('SMTP_USER=' + a.user);
+console.log('SMTP_PASS=' + a.pass);
+console.log('SMTP_FROM=SecureNotes ' + a.user);
+console.log('Login URL: https://ethereal.email/login');
+console.log('Login user: ' + a.user);
+console.log('Login pass: ' + a.pass);

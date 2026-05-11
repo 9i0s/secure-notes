@@ -8,6 +8,9 @@ import dotenv from "dotenv";
 import authRouter from "./routes/auth.js";
 import notesRouter from "./routes/notes.js";
 import adminRouter from "./routes/admin.js";
+import socialRouter from "./routes/social.js";
+import passport from "./auth/passport.js";
+import twofaRouter from "./routes/twofa.js";
 
 dotenv.config();
 
@@ -36,7 +39,11 @@ app.get("/api/health", (req, res) => {
   res.json({ ok: true, time: new Date().toISOString() });
 });
 
+app.use(passport.initialize());
+
 app.use("/api/auth", authRouter);
+app.use("/api/auth", socialRouter);
+app.use("/api/2fa", twofaRouter);
 app.use("/api/notes", notesRouter);
 app.use("/api/admin", adminRouter);
 
