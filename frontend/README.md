@@ -2,7 +2,7 @@
 
 A full-stack secure note-taking application with multi-factor authentication, social login (Google + GitHub), and role-based access control.
 
-**🌐 Live Backend:** https://secure-notes-backend-wawg.onrender.com  
+**🌐 Live Backend:** [https://secure-notes-backend-wawg.onrender.com](https://dashboard.render.com/web/srv-d80m823eo5us73flo410)  
 **📦 Repository:** https://github.com/9i0s/secure-notes
 
 ---
