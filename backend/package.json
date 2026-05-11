@@ -5,13 +5,12 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-  "dev": "nodemon src/index.js",
-  "start": "node src/index.js",
-  "build": "prisma generate && prisma migrate deploy",
-  "test": "vitest run",
-  "test:watch": "vitest",
-  "test:coverage": "vitest run --coverage"
-},
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "build": "prisma generate && prisma migrate deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +23,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
-    "express-session": "^1.19.0",
+    "express-session": "^1.18.1",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "nodemailer": "^6.9.16",
