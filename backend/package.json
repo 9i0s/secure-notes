@@ -5,11 +5,13 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+  "dev": "nodemon src/index.js",
+  "start": "node src/index.js",
+  "build": "prisma generate && prisma migrate deploy",
+  "test": "vitest run",
+  "test:watch": "vitest",
+  "test:coverage": "vitest run --coverage"
+},
   },
   "keywords": [],
   "author": "",
