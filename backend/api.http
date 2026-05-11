@@ -1,0 +1,68 @@
+### Health
+GET http://localhost:4000/api/health
+
+### Signup
+POST http://localhost:4000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "test1234",
+  "name": "Test User"
+}
+
+### Login (captures token automatically)
+# @name login
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "test1234"
+}
+
+###
+@token = {{login.response.body.accessToken}}
+
+### Me
+GET http://localhost:4000/api/auth/me
+Authorization: Bearer {{token}}
+
+### Create a note
+# @name createNote
+POST http://localhost:4000/api/notes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "My first note",
+  "content": "Hello, secure world!"
+}
+
+### List my notes
+GET http://localhost:4000/api/notes
+Authorization: Bearer {{token}}
+
+### Update the note we just created
+@noteId = {{createNote.response.body.note.id}}
+
+PUT http://localhost:4000/api/notes/{{noteId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "content": "Updated content"
+}
+
+### Delete that note
+DELETE http://localhost:4000/api/notes/{{noteId}}
+Authorization: Bearer {{token}}
+
+### ADMIN: List all users
+GET http://localhost:4000/api/admin/users
+Authorization: Bearer {{token}}
+
+### ADMIN: List all notes from all users
+GET http://localhost:4000/api/admin/notes
+Authorization: Bearer {{token}}
